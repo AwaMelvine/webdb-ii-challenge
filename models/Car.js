@@ -9,4 +9,9 @@ module.exports = {
         const count = await db('cars').where('id', id).update(data);
         return (count > 0 ? this.get(id) : null);
     },
+
+    async remove(id) {
+        const count = await db('cars').where('id', id).del();
+        return count;
+    }
 }
