@@ -12,4 +12,14 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.put("/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const count = await Car.update(id, req.body);
+        res.status(200).json({ data: count });
+    } catch (error) {
+        res.status(500).json({ error: "Failed to update car" });
+    }
+});
+
 module.exports = router;
