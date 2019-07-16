@@ -8,7 +8,7 @@ exports.up = function (knex) {
         table.decimal('mileage').notNullable();
         table.text('transmissionType', 128).nullable();
         table.string('status').nullable();
-        table.timestamp('created_at').defaultTo(knex.fn.now())
+        table.timestamp('created_at').defaultTo(knex.fn.now());
     });
 };
 
