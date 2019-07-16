@@ -6,6 +6,8 @@ exports.up = function (knex) {
         table.text('make', 128).notNullable();
         table.text('model', 128).notNullable();
         table.decimal('mileage').notNullable();
+        table.text('transmissionType', 128).nullable();
+        table.string('status').nullable();
         table.timestamp('created_at').defaultTo(knex.fn.now())
     });
 };
