@@ -1,10 +1,13 @@
 const express = require("express");
+const carRoutes = require("./routes/cars");
 const app = express();
 
 app.use(express.json());
 
+app.use("/api/cars", carRoutes);
+
 app.get('/', (req, res) => {
-    res.send({ message: "Welcome!!!" });
+    res.send({ message: "Welcome!!!, visit /api/cars to see more interesting stuff" });
 });
 
 const port = process.env.PORT || 5000;
