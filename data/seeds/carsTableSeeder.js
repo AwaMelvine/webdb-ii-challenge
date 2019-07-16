@@ -21,7 +21,6 @@ exports.seed = function (knex) {
           status: 'used',
           created_at: knex.fn.now(),
         }
-
       ]);
     });
 };
